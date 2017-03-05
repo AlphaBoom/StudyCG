@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/lesson_1"
+            android:title="@string/lesson_1_title"/>
+        <item
+            android:id="@+id/lesson_2"
+            android:title="@string/lesson_2_title"/>
+        <item
+            android:id="@+id/lesson_3"
+            android:title="@string/lesson_3_title"/>
+        <item
+            android:id="@+id/lesson_4"
+            android:title="@string/lesson_4_title"/>
+    </group>
+</menu>
