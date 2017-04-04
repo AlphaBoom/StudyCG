@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.anarchy.openglesbook.lessons.cube.CubeFragment;
 import com.anarchy.openglesbook.lessons.lesson1.Lesson1Fragment;
 import com.anarchy.openglesbook.lessons.ripple.RippleFragment;
 import com.anarchy.openglesbook.lessons.sierpinski.SierpinskiFragment;
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity
                 replaceFragment(SierpinskiFragment.class);
                 break;
             case R.id.lesson_4:
+                replaceFragment(CubeFragment.class);
                 break;
         }
 
