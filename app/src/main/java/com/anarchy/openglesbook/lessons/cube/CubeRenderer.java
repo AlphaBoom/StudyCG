@@ -25,7 +25,7 @@ import javax.microedition.khronos.opengles.GL10;
 class CubeRenderer implements GLSurfaceView.Renderer {
     private final Context mContext;
     private int mProgram;
-    private float[] a_vertices = new float[]{
+    private float[] vertices = new float[]{
             -0.5f, -0.5f, 0.5f, 1.0f,
             -0.5f, 0.5f, 0.5f, 1.0f,
             0.5f, 0.5f, 0.5f, 1.0f,
@@ -35,7 +35,7 @@ class CubeRenderer implements GLSurfaceView.Renderer {
             0.5f, 0.5f, -0.5f, 1.0f,
             0.5f, -0.5f, -0.5f, 1.0f
     };
-    private float[] a_colors = new float[]{
+    private float[] colors = new float[]{
             0, 0, 0, 1f,
             1f, 0, 0, 1f,
             1f, 1f, 0, 1f,
@@ -45,16 +45,16 @@ class CubeRenderer implements GLSurfaceView.Renderer {
             1f, 1f, 1f, 1f,
             0, 1f, 1f, 1f
     };
-    private float[] vertices = new float[36 * 4];
-    private float[] colors = new float[36 * 4];
-   /* private short[] indices = new short[]{
+//    private float[] vertices = new float[36 * 4];
+//    private float[] colors = new float[36 * 4];
+    private short[] indices = new short[]{
             1, 0, 3, 1, 3, 2,
             2, 3, 7, 2, 7, 6,
             3, 0, 4, 3, 4, 7,
             6, 5, 1, 6, 1, 2,
             4, 5, 6, 4, 6, 7,
             5, 4, 0, 5, 0, 1
-    };*/
+    };
     private FloatBuffer mVertices;
     private FloatBuffer mColors;
     private int mThetaHandle;
@@ -64,16 +64,16 @@ class CubeRenderer implements GLSurfaceView.Renderer {
 
     CubeRenderer(Context context) {
         mContext = context;
-        colorcube();
+//        colorcube();
         mVertices = ByteBuffer.allocateDirect(4 * vertices.length).order(ByteOrder.nativeOrder()).asFloatBuffer();
         mVertices.put(vertices);
         mVertices.position(0);
         mColors = ByteBuffer.allocateDirect(4 * colors.length).order(ByteOrder.nativeOrder()).asFloatBuffer();
         mColors.put(colors);
         mColors.position(0);
-        /*mIndices = ByteBuffer.allocateDirect(2 * indices.length).order(ByteOrder.nativeOrder()).asShortBuffer();
+        mIndices = ByteBuffer.allocateDirect(2 * indices.length).order(ByteOrder.nativeOrder()).asShortBuffer();
         mIndices.put(indices);
-        mIndices.position(0);*/
+        mIndices.position(0);
     }
  private void colorcube(){
      quad(1,0,3,2);
@@ -85,30 +85,30 @@ class CubeRenderer implements GLSurfaceView.Renderer {
  }
     private void quad(int a,int b,int c,int d){
         a *= 4;b*=4;c*=4;d*=4;
-        colors[index] = a_colors[a];vertices[index] = a_vertices[a];index++;
-        colors[index] = a_colors[a + 1];vertices[index] = a_vertices[a + 1];index++;
-        colors[index] = a_colors[a + 2];vertices[index] = a_vertices[a + 2];index++;
-        colors[index] = a_colors[a + 3];vertices[index] = a_vertices[a + 3];index++;
-        colors[index] = a_colors[b];vertices[index] = a_vertices[b];index++;
-        colors[index] = a_colors[b + 1];vertices[index] = a_vertices[b + 1];index++;
-        colors[index] = a_colors[b + 2];vertices[index] = a_vertices[b + 2];index++;
-        colors[index] = a_colors[b + 3];vertices[index] = a_vertices[b + 3];index++;
-        colors[index] = a_colors[c];vertices[index] = a_vertices[c];index++;
-        colors[index] = a_colors[c + 1];vertices[index] = a_vertices[c + 1];index++;
-        colors[index] = a_colors[c + 2];vertices[index] = a_vertices[c + 2];index++;
-        colors[index] = a_colors[c + 3];vertices[index] = a_vertices[c + 3];index++;
-        colors[index] = a_colors[a];vertices[index] = a_vertices[a];index++;
-        colors[index] = a_colors[a + 1];vertices[index] = a_vertices[a + 1];index++;
-        colors[index] = a_colors[a + 2];vertices[index] = a_vertices[a + 2];index++;
-        colors[index] = a_colors[a + 3];vertices[index] = a_vertices[a + 3];index++;
-        colors[index] = a_colors[c];vertices[index] = a_vertices[c];index++;
-        colors[index] = a_colors[c + 1];vertices[index] = a_vertices[c + 1];index++;
-        colors[index] = a_colors[c + 2];vertices[index] = a_vertices[c + 2];index++;
-        colors[index] = a_colors[c + 3];vertices[index] = a_vertices[c + 3];index++;
-        colors[index] = a_colors[d];vertices[index] = a_vertices[d];index++;
-        colors[index] = a_colors[d + 1];vertices[index] = a_vertices[d + 1];index++;
-        colors[index] = a_colors[d + 2];vertices[index] = a_vertices[d + 2];index++;
-        colors[index] = a_colors[d + 3];vertices[index] = a_vertices[d + 3];index++;
+        colors[index] = colors[a];vertices[index] = vertices[a];index++;
+        colors[index] = colors[a + 1];vertices[index] = vertices[a + 1];index++;
+        colors[index] = colors[a + 2];vertices[index] = vertices[a + 2];index++;
+        colors[index] = colors[a + 3];vertices[index] = vertices[a + 3];index++;
+        colors[index] = colors[b];vertices[index] = vertices[b];index++;
+        colors[index] = colors[b + 1];vertices[index] = vertices[b + 1];index++;
+        colors[index] = colors[b + 2];vertices[index] = vertices[b + 2];index++;
+        colors[index] = colors[b + 3];vertices[index] = vertices[b + 3];index++;
+        colors[index] = colors[c];vertices[index] = vertices[c];index++;
+        colors[index] = colors[c + 1];vertices[index] = vertices[c + 1];index++;
+        colors[index] = colors[c + 2];vertices[index] = vertices[c + 2];index++;
+        colors[index] = colors[c + 3];vertices[index] = vertices[c + 3];index++;
+        colors[index] = colors[a];vertices[index] = vertices[a];index++;
+        colors[index] = colors[a + 1];vertices[index] = vertices[a + 1];index++;
+        colors[index] = colors[a + 2];vertices[index] = vertices[a + 2];index++;
+        colors[index] = colors[a + 3];vertices[index] = vertices[a + 3];index++;
+        colors[index] = colors[c];vertices[index] = vertices[c];index++;
+        colors[index] = colors[c + 1];vertices[index] = vertices[c + 1];index++;
+        colors[index] = colors[c + 2];vertices[index] = vertices[c + 2];index++;
+        colors[index] = colors[c + 3];vertices[index] = vertices[c + 3];index++;
+        colors[index] = colors[d];vertices[index] = vertices[d];index++;
+        colors[index] = colors[d + 1];vertices[index] = vertices[d + 1];index++;
+        colors[index] = colors[d + 2];vertices[index] = vertices[d + 2];index++;
+        colors[index] = colors[d + 3];vertices[index] = vertices[d + 3];index++;
     }
 
     @Override
@@ -133,7 +133,7 @@ class CubeRenderer implements GLSurfaceView.Renderer {
         GLES30.glEnableVertexAttribArray(vColor);
         GLES30.glVertexAttribPointer(vColor, 4, GLES30.GL_FLOAT, false, 0, 4*mVertices.capacity());
         mThetaHandle = GLES30.glGetUniformLocation(mProgram, "theta");
-//        GLES30.glEnable(GLES30.GL_DEPTH_TEST);
+        GLES30.glEnable(GLES30.GL_DEPTH_TEST);
         GLES30.glClearColor(1f, 1f, 1f, 1f);
     }
 
@@ -150,7 +150,7 @@ class CubeRenderer implements GLSurfaceView.Renderer {
         }
         GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT | GLES30.GL_DEPTH_BUFFER_BIT);
         GLES30.glUniform3fv(mThetaHandle, 1, mTheta, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,0,36);
-//        GLES30.glDrawElements(GLES30.GL_TRIANGLES, mIndices.capacity(), GLES30.GL_UNSIGNED_SHORT, mIndices);
+//        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,0,36);
+        GLES30.glDrawElements(GLES30.GL_TRIANGLES, mIndices.capacity(), GLES30.GL_UNSIGNED_SHORT, mIndices);
     }
 }
