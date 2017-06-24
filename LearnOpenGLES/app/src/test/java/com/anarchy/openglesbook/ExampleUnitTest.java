@@ -1,5 +1,10 @@
 package com.anarchy.openglesbook;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.webkit.WebView;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
