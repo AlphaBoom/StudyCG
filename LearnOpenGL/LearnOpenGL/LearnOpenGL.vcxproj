@@ -132,8 +132,10 @@
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="texture.fs" />
-    <None Include="texture.vs" />
+    <None Include="lamp.fs" />
+    <None Include="lamp.vs" />
+    <None Include="lighting.fs" />
+    <None Include="lighting.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

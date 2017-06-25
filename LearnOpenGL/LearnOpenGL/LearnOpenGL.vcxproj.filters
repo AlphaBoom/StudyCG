@@ -37,10 +37,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="texture.fs">
+    <None Include="lamp.vs">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="texture.vs">
+    <None Include="lamp.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="lighting.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="lighting.vs">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
