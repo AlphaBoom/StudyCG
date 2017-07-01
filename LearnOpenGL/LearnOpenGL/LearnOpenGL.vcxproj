@@ -124,7 +124,7 @@
   <ItemGroup>
     <ClCompile Include="F:\ChromeDownload\glad\src\glad.c" />
     <ClCompile Include="stb_image.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="lightTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />

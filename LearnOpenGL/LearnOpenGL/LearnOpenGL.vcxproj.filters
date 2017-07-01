@@ -18,10 +18,10 @@
     <ClCompile Include="F:\ChromeDownload\glad\src\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stb_image.cpp">
+    <ClCompile Include="lightTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
