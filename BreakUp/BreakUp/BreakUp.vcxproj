@@ -124,6 +124,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\LearnOpenGL\LearnOpenGL\stb_image.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="game_level.h" />
+    <ClInclude Include="game_object.h" />
     <ClInclude Include="resource_manager.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="sprite_renderer.h" />
@@ -133,6 +135,8 @@
     <ClCompile Include="..\..\LearnOpenGL\LearnOpenGL\stb_image.cpp" />
     <ClCompile Include="F:\ChromeDownload\glad\src\glad.c" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="game_level.cpp" />
+    <ClCompile Include="game_object.cpp" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="resource_manager.cpp" />
     <ClCompile Include="shader.cpp" />

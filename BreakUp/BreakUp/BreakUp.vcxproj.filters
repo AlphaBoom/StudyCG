@@ -33,6 +33,12 @@
     <ClInclude Include="sprite_renderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="game_object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="game_level.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="texture.cpp">
@@ -57,6 +63,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="sprite_renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="game_object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="game_level.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
