@@ -30,6 +30,9 @@
     <ClInclude Include="..\..\LearnOpenGL\LearnOpenGL\stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="sprite_renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="texture.cpp">
@@ -53,5 +56,16 @@
     <ClCompile Include="F:\ChromeDownload\glad\src\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="sprite_renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sprite.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="sprite.fs">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>
