@@ -123,6 +123,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\LearnOpenGL\LearnOpenGL\stb_image.h" />
+    <ClInclude Include="ball_object.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="game_level.h" />
     <ClInclude Include="game_object.h" />
@@ -133,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\LearnOpenGL\LearnOpenGL\stb_image.cpp" />
+    <ClCompile Include="ball_object.cpp" />
     <ClCompile Include="F:\ChromeDownload\glad\src\glad.c" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="game_level.cpp" />
@@ -146,6 +148,9 @@
   <ItemGroup>
     <None Include="sprite.fs" />
     <None Include="sprite.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\textures\awesomeface.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

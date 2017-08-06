@@ -39,6 +39,9 @@
     <ClInclude Include="game_level.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ball_object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="texture.cpp">
@@ -71,6 +74,9 @@
     <ClCompile Include="game_level.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ball_object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="sprite.vs">
@@ -79,5 +85,10 @@
     <None Include="sprite.fs">
       <Filter>资源文件</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\textures\awesomeface.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
