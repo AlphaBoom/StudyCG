@@ -140,6 +140,8 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="game_level.cpp" />
     <ClCompile Include="game_object.cpp" />
+    <ClCompile Include="particle_generator.cpp" />
+    <ClCompile Include="particle_generator.h" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="resource_manager.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -147,6 +149,8 @@
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="particle.fs" />
+    <None Include="particle.vs" />
     <None Include="sprite.fs" />
     <None Include="sprite.vs" />
   </ItemGroup>

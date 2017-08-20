@@ -3,11 +3,13 @@
 #include "sprite_renderer.h"
 #include "game_object.h"
 #include "ball_object.h"
-
+#include "particle_generator.h"
 
 SpriteRenderer *Renderer;
 GameObject      *Player;
 BallObject *Ball;
+ParticleGenerator *Particles;
+
 
 Game::Game(GLuint width, GLuint height)
 	:State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -19,24 +21,32 @@ Game::~Game()
 {
 	delete Renderer;
 	delete Player;
+	delete Ball;
+	delete Particles;
 }
 
 
 void Game::Init()
 {
 	ResourceManager::LoadShader("resources/shaders/sprite.vs", "resources/shaders/sprite.fs", nullptr, "sprite");
+	ResourceManager::LoadShader("resources/shaders/particle.vs", "resources/shaders/particle.fs", nullptr, "particle");
 
 	glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width), static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
 	ResourceManager::GetShader("sprite").Use().SetInteger("image", 0);
 	ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
+	ResourceManager::GetShader("particle").Use().SetInteger("sprite", 0);
+	ResourceManager::GetShader("particle").SetMatrix4("projection", projection);
 	//Load textures
 	ResourceManager::LoadTexture("resources/textures/background.jpg", GL_FALSE, "background");
 	ResourceManager::LoadTexture("resources/textures/awesomeface.png", GL_TRUE, "face");
 	ResourceManager::LoadTexture("resources/textures/block.png", GL_FALSE, "block");
 	ResourceManager::LoadTexture("resources/textures/block_solid.png", GL_FALSE, "block_solid");
-	ResourceManager::LoadTexture("resources/textures/paddle.png", true, "paddle");
+	ResourceManager::LoadTexture("resources/textures/paddle.png", GL_TRUE, "paddle");
+	ResourceManager::LoadTexture("resources/textures/particle.png", GL_TRUE, "particle");
+
 
 	Renderer = new SpriteRenderer(ResourceManager::GetShader("sprite"));
+	Particles = new ParticleGenerator(ResourceManager::GetShader("particle"),ResourceManager::GetTexture("particle"),500);
 
 	// Load levels
 	GameLevel one; one.Load("resources/levels/one.lvl", this->Width, this->Height * 0.5);
@@ -59,6 +69,7 @@ void Game::Update(GLfloat dt)
 {
 	Ball->Move(dt, this->Width);
 	this->DoCollisions();
+	Particles->Update(dt, *Ball, 2, glm::vec2(Ball->Radius / 2));
 	if (Ball->Position.y >= this->Height)
 	{
 		this->ResetLevel();
@@ -103,6 +114,7 @@ void Game::Render()
 		this->Levels[this->Level].Draw(*Renderer);
 		// Draw player
 		Player->Draw(*Renderer);
+		Particles->Draw();
 		Ball->Draw(*Renderer);
 	}
 }

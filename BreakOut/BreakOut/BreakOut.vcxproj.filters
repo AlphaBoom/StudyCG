@@ -77,12 +77,24 @@
     <ClCompile Include="ball_object.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="particle_generator.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_generator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="sprite.vs">
       <Filter>资源文件</Filter>
     </None>
     <None Include="sprite.fs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="particle.vs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="particle.fs">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
