@@ -42,6 +42,9 @@
     <ClInclude Include="ball_object.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="post_processor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="texture.cpp">
@@ -83,24 +86,28 @@
     <ClCompile Include="particle_generator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="post_processor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="sprite.vs">
+    <None Include="resources\shaders\particle.fs">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="sprite.fs">
+    <None Include="resources\shaders\particle.vs">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="particle.vs">
+    <None Include="resources\shaders\sprite.fs">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="particle.fs">
+    <None Include="resources\shaders\sprite.vs">
       <Filter>资源文件</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\textures\awesomeface.png">
+    <None Include="resources\shaders\post_processing.fs">
       <Filter>资源文件</Filter>
-    </Image>
+    </None>
+    <None Include="resources\shaders\post_processing.vs">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -128,6 +128,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="game_level.h" />
     <ClInclude Include="game_object.h" />
+    <ClInclude Include="post_processor.h" />
     <ClInclude Include="resource_manager.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="sprite_renderer.h" />
@@ -142,6 +143,7 @@
     <ClCompile Include="game_object.cpp" />
     <ClCompile Include="particle_generator.cpp" />
     <ClCompile Include="particle_generator.h" />
+    <ClCompile Include="post_processor.cpp" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="resource_manager.cpp" />
     <ClCompile Include="shader.cpp" />
@@ -149,13 +151,12 @@
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="particle.fs" />
-    <None Include="particle.vs" />
-    <None Include="sprite.fs" />
-    <None Include="sprite.vs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\textures\awesomeface.png" />
+    <None Include="resources\shaders\particle.fs" />
+    <None Include="resources\shaders\particle.vs" />
+    <None Include="resources\shaders\post_processing.fs" />
+    <None Include="resources\shaders\post_processing.vs" />
+    <None Include="resources\shaders\sprite.fs" />
+    <None Include="resources\shaders\sprite.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
