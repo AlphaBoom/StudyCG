@@ -45,6 +45,9 @@
     <ClInclude Include="post_processor.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="power_up.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="texture.cpp">

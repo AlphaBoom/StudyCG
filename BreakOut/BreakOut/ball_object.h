@@ -9,6 +9,7 @@ class BallObject : public GameObject
 public:
 	GLfloat Radius;
 	GLboolean Stuck;
+	GLboolean Sticky, PassThrough;
 
 	BallObject();
 	BallObject(glm::vec2 pos, GLfloat radius, glm::vec2 velocity, Texture2D sprite);

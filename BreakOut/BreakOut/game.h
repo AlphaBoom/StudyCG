@@ -4,6 +4,7 @@
 #include <glad\glad.h>
 #include <vector>
 #include "game_level.h"
+#include "power_up.h"
 
 enum GameState {
 	GAME_ACTIVE,
@@ -36,6 +37,7 @@ public:
 	GLuint Width, Height;
 
 	std::vector<GameLevel> Levels;
+	std::vector<PowerUp> PowerUps;
 	GLuint Level;
 
 	Game(GLuint width, GLuint height);
@@ -45,6 +47,8 @@ public:
 	void Update(GLfloat dt);
 	void Render();
 	void DoCollisions();
+	void SpawnPowerUps(GameObject &blocks);
+	void UpdatePowerUps(GLfloat dt);
 
 	void ResetLevel();
 	void ResetPlayer();
