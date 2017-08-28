@@ -1,5 +1,8 @@
 #include <algorithm>
 
+#include <irrKlang\irrKlang.h>
+using namespace irrklang;
+
 #include "game.h"
 #include "resource_manager.h"
 #include "sprite_renderer.h"
@@ -14,6 +17,7 @@ GameObject      *Player;
 BallObject *Ball;
 ParticleGenerator *Particles;
 PostProcessor *Effects;
+ISoundEngine *SoundEngine = createIrrKlangDevice();
 GLfloat ShakeTime = 0.0f;
 
 Game::Game(GLuint width, GLuint height)
@@ -77,6 +81,7 @@ void Game::Init()
 	glm::vec2 ballPos = playerPos + glm::vec2(PLAYER_SIZE.x / 2 - BALL_RADIUS, -BALL_RADIUS * 2);
 	Ball = new BallObject(ballPos, BALL_RADIUS, INITIAL_BALL_VELOCITY, ResourceManager::GetTexture("face"));
 
+	SoundEngine->play2D("resources/audio/breakout.mp3", GL_TRUE);
 }
 
 void Game::Update(GLfloat dt)
@@ -250,11 +255,13 @@ void Game::DoCollisions()
 				{
 					box.Destroyed = GL_TRUE;
 					this->SpawnPowerUps(box);
+					SoundEngine->play2D("resources/audio/bleep.mp3", GL_FALSE);
 				}
 				else
 				{
 					ShakeTime = 0.05f;
 					Effects->Shake = GL_TRUE;
+					SoundEngine->play2D("resources/audio/bleep.mp3", GL_FALSE);
 				}
 				Direction dir = std::get<1>(collision);
 				glm::vec2 diff_vector = std::get<2>(collision);
@@ -298,6 +305,7 @@ void Game::DoCollisions()
 				ActivatePowerUp(powerUp);
 				powerUp.Destroyed = GL_TRUE;
 				powerUp.Activated = GL_TRUE;
+				SoundEngine->play2D("resources/audio/powerup.wav", GL_FALSE);
 			}
 		}
 	}
@@ -322,6 +330,8 @@ void Game::DoCollisions()
 
 		// If Sticky powerup is activated, also stick ball to paddle once new velocity vectors were calculated
 		Ball->Stuck = Ball->Sticky;
+
+		SoundEngine->play2D("resources/audio/bleep.wav", GL_FALSE);
 	}
 }
 

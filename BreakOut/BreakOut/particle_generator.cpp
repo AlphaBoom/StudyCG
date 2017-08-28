@@ -1,5 +1,4 @@
 #include "particle_generator.h"
-#include <iostream>
 
 ParticleGenerator::ParticleGenerator(Shader shader, Texture2D texture, GLuint amount)
 	: shader(shader), texture(texture), amount(amount)
@@ -23,7 +22,7 @@ void ParticleGenerator::Update(GLfloat dt, GameObject &object, GLuint newParticl
 		if (p.Life > 0.0f)
 		{	// particle is alive, thus update
 			p.Position -= p.Velocity * dt;
-			p.Color.a -= dt * 2.5f;
+			p.Color.a -= dt * 2.5;
 		}
 	}
 }
@@ -105,7 +104,7 @@ GLuint ParticleGenerator::firstUnusedParticle()
 void ParticleGenerator::respawnParticle(Particle &particle, GameObject &object, glm::vec2 offset)
 {
 	GLfloat random = ((rand() % 100) - 50) / 10.0f;
-	GLfloat rColor = 0.5f + ((rand() % 100) / 100.0f);
+	GLfloat rColor = 0.5 + ((rand() % 100) / 100.0f);
 	particle.Position = object.Position + random + offset;
 	particle.Color = glm::vec4(rColor, rColor, rColor, 1.0f);
 	particle.Life = 1.0f;
